@@ -10,6 +10,7 @@ function HomeUI() {
   return (
     <View style={styles.container}>
       <Text>Home</Text>
+      <Text>Essa será a tela principal da aplicação</Text>
     </View>
   );
 }
@@ -37,6 +38,24 @@ function ConfiguracoesUI() {
   return (
     <View style={styles.container}>
       <Text>Configurações</Text>
+    </View>
+  );
+}
+
+//  TELA 5 : LOGAR
+function LogarUI() {
+  return (
+    <View style={styles.container}>
+      <Text>Tela de login</Text>
+    </View>
+  );
+}
+
+//  TELA 7 : SAIR
+function SairUI() {
+  return (
+    <View style={styles.container}>
+      <Text>Deseja realmente sair?</Text>
     </View>
   );
 }
@@ -82,7 +101,7 @@ export default function Menu(){
           options={
             {
               drawerLabel: (({focused}) => <Text style={{color: focused ? '#313131' : '#fff' }}>Perfil</Text>),
-              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="chat" />)
+              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="face" />)
             }
           }
           />
@@ -106,10 +125,35 @@ export default function Menu(){
           options={
             {
               drawerLabel: (({focused}) => <Text style={{color: focused ? '#313131' : '#fff' }}>Configurações</Text>),
-              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="chat" />)
+              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="settings" />)
             }
           }
           />
+
+          {/* ITEM 5 - Logar */}
+        <Drawer.Screen 
+          name="MeuApp4" 
+          component={LogarUI} 
+          options={
+            {
+              drawerLabel: (({focused}) => <Text style={{color: focused ? '#313131' : '#fff' }}>Logar</Text>),
+              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="login" />)
+            }
+          }
+          />
+
+          {/* ITEM 6 - Sair */}
+        <Drawer.Screen 
+          name="MeuApp5" 
+          component={SairUI} 
+          options={
+            {
+              drawerLabel: (({focused}) => <Text style={{color: focused ? '#313131' : '#fff' }}>Sair</Text>),
+              drawerIcon: (({focused}) => <Icon color={focused ? '#313131' : '#fff' } name="logout" />)
+            }
+          }
+          />
+          
 
       </Drawer.Navigator>
     </NavigationContainer>
